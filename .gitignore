@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+# Vercel output
+.vercel/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Large raw archive folder (curated assets are organized in src/assets/)
+image jad/

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" fill="none">
+  <!-- Crest Group -->
+  <g transform="translate(10, 5)">
+    <!-- Laurel Wreath Left -->
+    <path d="M22,78 C12,68 8,50 14,34 C16,30 20,34 18,38 C14,48 16,62 25,70 Z" fill="#00A3E0"/>
+    <circle cx="10" cy="46" r="3.5" fill="#00A3E0"/>
+    <circle cx="13" cy="34" r="3.5" fill="#00A3E0"/>
+    <circle cx="19" cy="24" r="3.5" fill="#00A3E0"/>
+    <circle cx="12" cy="58" r="3.5" fill="#00A3E0"/>
+    <circle cx="18" cy="70" r="3.5" fill="#00A3E0"/>
+
+    <!-- Laurel Wreath Right -->
+    <path d="M88,78 C98,68 102,50 96,34 C94,30 90,34 92,38 C96,48 94,62 85,70 Z" fill="#00A3E0"/>
+    <circle cx="100" cy="46" r="3.5" fill="#00A3E0"/>
+    <circle cx="97" cy="34" r="3.5" fill="#00A3E0"/>
+    <circle cx="91" cy="24" r="3.5" fill="#00A3E0"/>
+    <circle cx="98" cy="58" r="3.5" fill="#00A3E0"/>
+    <circle cx="92" cy="70" r="3.5" fill="#00A3E0"/>
+
+    <!-- Academic Mortier / Graduation Cap -->
+    <polygon points="55,6 92,20 55,30 18,20" fill="#FFFFFF"/>
+    <polygon points="55,10 84,20 55,27 26,20" fill="#E2E8F0"/>
+    <!-- Gold Tassel Hanging -->
+    <path d="M74,21 L78,38" stroke="#F4C430" stroke-width="2"/>
+    <circle cx="78" cy="40" r="2.5" fill="#F4C430"/>
+
+    <!-- 5 Gold Stars on the Cap -->
+    <g fill="#F4C430" transform="translate(32, 14) scale(0.65)">
+      <polygon points="10,1 12,7 18,7 13,11 15,17 10,13 5,17 7,11 2,7 8,7"/>
+      <polygon points="23,1 25,7 31,7 26,11 28,17 23,13 18,17 20,11 15,7 21,7"/>
+      <polygon points="36,1 38,7 44,7 39,11 41,17 36,13 31,17 33,11 28,7 34,7"/>
+      <polygon points="49,1 51,7 57,7 52,11 54,17 49,13 44,17 46,11 41,7 47,7"/>
+      <polygon points="62,1 64,7 70,7 65,11 67,17 62,13 57,17 59,11 54,7 60,7"/>
+    </g>
+
+    <!-- Subtitle on Crest: INSTITUT DE FORMATION PROFESSIONNELLE BILINGUE -->
+    <text x="55" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.2" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="0.3">INSTITUT DE FORMATION PROFESSIONNELLE BILINGUE</text>
+
+    <!-- Monogram JaD with Needle -->
+    <path d="M42,42 L49,42 L49,66 C49,72 43,76 35,76 C28,76 25,72 25,67 L32,67 C32,69 34,70.5 36.5,70.5 C39.5,70.5 41.5,69 41.5,65 Z" fill="#00A3E0"/>
+    
+    <!-- Diagonal Needle crossing J -->
+    <path d="M23,41 L58,74" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <ellipse cx="26" cy="44" rx="3.5" ry="1.2" transform="rotate(45 26 44)" fill="#0A1E3C"/>
+
+    <!-- 'aD' in Pure White -->
+    <text x="52" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="-1">aD</text>
+
+    <!-- Banner Ribbon COUTURE -->
+    <g transform="translate(14, 78)">
+      <polygon points="0,6 12,0 82,0 70,6 82,14 12,14" fill="#00A3E0"/>
+      <rect x="10" y="0" width="62" height="14" rx="2" fill="#00A3E0"/>
+      <text x="41" y="10.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2.5">COUTURE</text>
+    </g>
+  </g>
+
+  <!-- Typography Next to Crest -->
+  <g transform="translate(135, 32)">
+    <text x="0" y="28" font-family="'Cinzel', 'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="30" font-weight="800" letter-spacing="4" fill="#FFFFFF">JAD COUTURE</text>
+    <!-- Cyan & Gold Accent Line -->
+    <rect x="0" y="38" width="220" height="2" fill="#00A3E0"/>
+    <rect x="220" y="38" width="80" height="2" fill="#F4C430"/>
+    <!-- Positioning Subtitle -->
+    <text x="0" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" letter-spacing="2.2" fill="#00A3E0">INSTITUT DE FORMATION PROFESSIONNELLE BILINGUE EN MODE</text>
+    <text x="0" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" letter-spacing="1.2" fill="#CBD5E1">AGRÉÉ MINEFOP • DSCHANG — CAMEROUN</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" fill="none">
+  <!-- Monogram & Needle Emblem -->
+  <g transform="translate(10, 8)">
+    <!-- Elegant Gold Diamond Frame -->
+    <rect x="3" y="3" width="58" height="58" rx="8" transform="rotate(45 32 32)" stroke="url(#goldGradLight)" stroke-width="1.5" fill="none" opacity="0.9"/>
+    <rect x="9" y="9" width="46" height="46" rx="6" transform="rotate(45 32 32)" stroke="url(#goldGradLight)" stroke-width="0.8" fill="none" opacity="0.5"/>
+    
+    <!-- Stylized Needle with Thread -->
+    <path d="M12 52 L48 16" stroke="url(#goldGradLight)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Eye of the Needle -->
+    <ellipse cx="44" cy="20" rx="3" ry="1.5" transform="rotate(-45 44 20)" stroke="url(#goldGradLight)" stroke-width="1" fill="#0A1E3A"/>
+    <!-- Curving Golden Thread -->
+    <path d="M46 18 C52 12, 58 22, 50 30 C42 38, 22 28, 20 40 C18 50, 28 54, 34 50" stroke="url(#goldGradLight)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.95"/>
+    
+    <!-- Monogram J & C -->
+    <text x="31" y="42" font-family="'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif" font-size="22" font-weight="700" fill="url(#goldGradLight)" text-anchor="middle" letter-spacing="1">J</text>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(85, 20)">
+    <!-- Primary Brand Title -->
+    <text x="0" y="24" font-family="'Cinzel', 'Playfair Display', 'Didot', Georgia, serif" font-size="26" font-weight="700" letter-spacing="6" fill="#F8FAFC">JAD COUTURE</text>
+    <!-- Gold Separator Bar -->
+    <line x1="0" y1="33" x2="260" y2="33" stroke="url(#goldGradLight)" stroke-width="1" opacity="0.8"/>
+    <!-- Subtitle / Positioning -->
+    <text x="0" y="46" font-family="'Plus Jakarta Sans', 'Inter', 'Montserrat', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3.2" fill="#E5C788">INSTITUT DE FORMATION PROFESSIONNELLE EN MODE</text>
+  </g>
+
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E2B8"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#B88A3B"/>
+    </linearGradient>
+  </defs>
+</svg>
