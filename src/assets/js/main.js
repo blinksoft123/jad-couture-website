@@ -6,7 +6,7 @@
 import { JAD_DATA } from '../../data/content.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initHeroSlider();
+  initHeroCarousel();
   initStickyHeader();
   initMobileNav();
   initScrollSpy();
@@ -17,32 +17,78 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   01. HERO CINEMATIC SLIDER & VIDEO MANAGEMENT
+   01. HERO CAROUSEL AVEC TRANSITIONS ANIMÉES & INDICATEURS
    -------------------------------------------------------------------------- */
-function initHeroSlider() {
-  const slides = document.querySelectorAll('.hero-slide');
-  const tabs = document.querySelectorAll('.hero-scene-tab');
-  const heroVideo = document.getElementById('heroVideo');
+function initHeroCarousel() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const captions = document.querySelectorAll('.slide-caption-box');
+  const indicatorTabs = document.querySelectorAll('.carousel-indicator-tab');
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+  const counterEl = document.getElementById('carouselCounter');
+  const heroSection = document.getElementById('hero');
+
   if (!slides.length) return;
 
   let currentIndex = 0;
   let slideInterval = null;
-  const slideDuration = 6000; // 6s per scene
-
-  // Attempt to play video
-  if (heroVideo) {
-    heroVideo.play().catch(() => {
-      // Autoplay with sound restricted, muted is set so it should play
-    });
-  }
+  const slideDuration = 6000; // 6s per slide
 
   function goToSlide(index) {
-    slides.forEach((s, i) => {
-      s.classList.toggle('active', i === index);
+    // 1. Manage slide images and Ken Burns restart
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+        const img = slide.querySelector('.carousel-slide-img');
+        if (img) {
+          img.style.animation = 'none';
+          img.offsetHeight; // force reflow
+          img.style.animation = '';
+        }
+      } else {
+        slide.classList.remove('active');
+      }
     });
-    tabs.forEach((t, i) => {
-      t.classList.toggle('active', i === index);
+
+    // 2. Manage captions with animated transition
+    captions.forEach((cap, i) => {
+      if (i === index) {
+        cap.classList.add('active');
+      } else {
+        cap.classList.remove('active');
+      }
     });
+
+    // 3. Manage indicator tabs and progress bars
+    indicatorTabs.forEach((tab, i) => {
+      const pBar = tab.querySelector('.carousel-progress-bar');
+      if (i === index) {
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        if (pBar) {
+          pBar.style.transition = 'none';
+          pBar.style.width = '0%';
+          pBar.offsetHeight; // trigger reflow
+          pBar.style.transition = `width ${slideDuration}ms linear`;
+          pBar.style.width = '100%';
+        }
+      } else {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+        if (pBar) {
+          pBar.style.transition = 'none';
+          pBar.style.width = '0%';
+        }
+      }
+    });
+
+    // 4. Update counter display
+    if (counterEl) {
+      const currentFormatted = String(index + 1).padStart(2, '0');
+      const totalFormatted = String(slides.length).padStart(2, '0');
+      counterEl.textContent = `${currentFormatted} / ${totalFormatted}`;
+    }
+
     currentIndex = index;
   }
 
@@ -51,28 +97,113 @@ function initHeroSlider() {
     goToSlide(next);
   }
 
+  function prevSlide() {
+    const prev = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(prev);
+  }
+
   function startAutoplay() {
     stopAutoplay();
     slideInterval = setInterval(nextSlide, slideDuration);
+    // Ensure active bar continues animating
+    const activeTab = indicatorTabs[currentIndex];
+    if (activeTab) {
+      const pBar = activeTab.querySelector('.carousel-progress-bar');
+      if (pBar && (pBar.style.width === '0%' || pBar.style.width === '')) {
+        pBar.style.transition = `width ${slideDuration}ms linear`;
+        pBar.style.width = '100%';
+      }
+    }
   }
 
   function stopAutoplay() {
-    if (slideInterval) clearInterval(slideInterval);
+    if (slideInterval) {
+      clearInterval(slideInterval);
+      slideInterval = null;
+    }
   }
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
+  // Navigation arrow buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      prevSlide();
+      startAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nextSlide();
+      startAutoplay();
+    });
+  }
+
+  // Bottom indicator tabs click
+  indicatorTabs.forEach((tab, index) => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
       goToSlide(index);
       startAutoplay();
     });
   });
 
-  const heroSection = document.getElementById('hero');
+  // Pause on hover so user can read comfortable and click CTAs
   if (heroSection) {
-    heroSection.addEventListener('mouseenter', stopAutoplay);
-    heroSection.addEventListener('mouseleave', startAutoplay);
+    heroSection.addEventListener('mouseenter', () => {
+      stopAutoplay();
+      const activePBar = heroSection.querySelector('.carousel-indicator-tab.active .carousel-progress-bar');
+      if (activePBar) {
+        const computedWidth = window.getComputedStyle(activePBar).width;
+        activePBar.style.transition = 'none';
+        activePBar.style.width = computedWidth;
+      }
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      startAutoplay();
+    });
   }
 
+  // Keyboard accessibility (Left/Right arrows when hero is in view)
+  document.addEventListener('keydown', (e) => {
+    const rect = heroSection ? heroSection.getBoundingClientRect() : null;
+    if (rect && rect.bottom > 100 && rect.top < window.innerHeight) {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+        startAutoplay();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+        startAutoplay();
+      }
+    }
+  });
+
+  // Touch Swipe for mobile devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (heroSection) {
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 45;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        nextSlide();
+        startAutoplay();
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        prevSlide();
+        startAutoplay();
+      }
+    }, { passive: true });
+  }
+
+  // Initial trigger
+  goToSlide(0);
   startAutoplay();
 }
 

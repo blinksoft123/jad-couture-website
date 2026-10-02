@@ -98,15 +98,14 @@
         </div>
       </a>
 
-      <!-- Desktop Nav Links -->
+      <!-- Desktop Nav Links Reorganisés & Épurés -->
       <nav class="nav-links" role="navigation" aria-label="Menu Principal">
         <a href="#hero" class="nav-link active">Accueil</a>
-        <a href="#a-propos" class="nav-link">À Propos</a>
+        <a href="#a-propos" class="nav-link">L'Institut</a>
         <a href="#formations" class="nav-link">Formations</a>
-        <a href="#processus" class="nav-link">Savoir-Faire</a>
         <a href="#creations" class="nav-link">Créations</a>
         <a href="#experience" class="nav-link">L'Expérience</a>
-        <a href="#certification" class="nav-link">Agrément & Diplômes</a>
+        <a href="#certification" class="nav-link">Certifications</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
@@ -126,13 +125,11 @@
   <div class="mobile-nav-overlay" aria-hidden="true">
     <nav class="mobile-nav-links">
       <a href="#hero" class="mobile-nav-link">Accueil</a>
-      <a href="#a-propos" class="mobile-nav-link">À Propos de l'Institut</a>
-      <a href="#formations" class="mobile-nav-link">Nos Formations DQP / AQP</a>
-      <a href="#processus" class="mobile-nav-link">Le Savoir-Faire d'Atelier</a>
-      <a href="#creations" class="mobile-nav-link">Galerie Haute Création</a>
-      <a href="#experience" class="mobile-nav-link">L'Expérience Apprenantes</a>
-      <a href="#certification" class="mobile-nav-link">Agrément MINEFOP</a>
-      <a href="#inscriptions" class="mobile-nav-link">Inscriptions</a>
+      <a href="#a-propos" class="mobile-nav-link">L'Institut</a>
+      <a href="#formations" class="mobile-nav-link">Formations Certifiantes</a>
+      <a href="#creations" class="mobile-nav-link">Galerie Créations</a>
+      <a href="#experience" class="mobile-nav-link">L'Expérience Étudiante</a>
+      <a href="#certification" class="mobile-nav-link">Agrément MINEFOP & Diplômes</a>
       <a href="#contact" class="mobile-nav-link">Contact & Dschang</a>
     </nav>
     <div class="mobile-nav-footer">
@@ -144,30 +141,25 @@
 
   <main role="main">
     <!-- =========================================================================
-         02. HERO IMMERSIF AVEC VIDÉO RÉELLE & SCÈNES CINÉMATIQUES
+         02. HERO AVEC CARROUSEL D'IMAGES STRUCTURÉ ET ANIMÉ
          ========================================================================= -->
-    <section id="hero" class="hero-section" aria-label="Hero immersif JAD Couture">
-      <!-- Media Layer: Real Video + Curated Real Photo Slides -->
-      <div class="hero-media-wrap">
-        <!-- Real Video Loop -->
-        <video id="heroVideo" class="hero-video-bg" autoplay muted loop playsinline poster="src/assets/images/hero-royal-collection.jpg">
-          <source src="src/assets/video/jad-hero-video.mp4" type="video/mp4">
-        </video>
-
-        <!-- Slides Layer -->
-        <div class="hero-slides-layer" aria-hidden="true">
-          <div class="hero-slide active">
-            <img src="src/assets/images/hero-royal-collection.jpg" alt="Collection Royale Ndop JAD Couture" class="hero-slide-bg">
-          </div>
-          <div class="hero-slide">
-            <img src="src/assets/images/hero-director-creations.jpg" alt="Le Maître Couturier et ses diplômées" class="hero-slide-bg">
-          </div>
-          <div class="hero-slide">
-            <img src="src/assets/images/hero-celebration-diplome.jpg" alt="Célébration des diplômes CFP JAD Couture" class="hero-slide-bg">
-          </div>
-          <div class="hero-slide">
-            <img src="src/assets/images/hero-promotion-atelier.jpg" alt="Promotion JAD Couture en tenue royale" class="hero-slide-bg">
-          </div>
+    <section id="hero" class="hero-section" aria-label="Carrousel d'excellence JAD Couture">
+      <!-- Carrousel d'images d'arrière-plan avec transition Ken Burns & fade -->
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="carousel-slide active" data-index="0">
+          <img src="src/assets/images/hero-royal-collection.jpg" alt="Collection Royale Ndop JAD Couture" class="carousel-slide-img">
+        </div>
+        <div class="carousel-slide" data-index="1">
+          <img src="src/assets/images/hero-director-creations.jpg" alt="Maître Couturier et créations d'atelier JAD Couture" class="carousel-slide-img">
+        </div>
+        <div class="carousel-slide" data-index="2">
+          <img src="src/assets/images/hero-celebration-diplome.jpg" alt="Célébration des lauréates diplômées JAD Couture" class="carousel-slide-img">
+        </div>
+        <div class="carousel-slide" data-index="3">
+          <img src="src/assets/images/hero-promotion-atelier.jpg" alt="Promotion d'atelier en parure traditionnelle royale" class="carousel-slide-img">
+        </div>
+        <div class="carousel-slide" data-index="4">
+          <img src="src/assets/images/editorial-atelier-promotion.jpg" alt="Atelier professionnel et pratique intensive JAD Couture" class="carousel-slide-img">
         </div>
       </div>
 
@@ -175,55 +167,166 @@
       <div class="hero-overlay"></div>
       <div class="hero-mesh-grid"></div>
 
-      <!-- Main Editorial Content -->
+      <!-- Contenu éditorial dynamique synchronisé avec chaque image -->
       <div class="container" style="position: relative; z-index: 10;">
         <div class="hero-content">
-          <div class="hero-tagline-badge">
-            <span style="color: var(--color-gold-stars); font-size: 0.95rem;">★★★★★</span>
-            <span>Institut Bilingue Agréé MINEFOP • Arrêté N° 000789</span>
+          <!-- Slide 0 Caption -->
+          <div class="slide-caption-box active" data-caption="0">
+            <div class="hero-tagline-badge">
+              <span style="color: var(--color-gold-stars); font-size: 0.95rem;">★★★★★</span>
+              <span>Institut Bilingue Agréé MINEFOP • Arrêté N° 000789</span>
+            </div>
+            <h1 class="hero-title">
+              JAD COUTURE
+              <span class="title-accent">L'Excellence de la Mode & du Savoir-Faire</span>
+            </h1>
+            <p class="hero-quote">
+              « Apprendre. Créer. Transformer son talent en métier d'excellence. »
+            </p>
+            <div class="hero-actions">
+              <a href="#formations" class="btn btn-primary-azure">Découvrir les Formations</a>
+              <a href="#inscriptions" class="btn btn-gold">S'inscrire (DQP / AQP)</a>
+            </div>
           </div>
 
-          <h1 class="hero-title">
-            JAD COUTURE
-            <span class="title-accent">L'Excellence de la Mode & du Savoir-Faire</span>
-          </h1>
+          <!-- Slide 1 Caption -->
+          <div class="slide-caption-box" data-caption="1">
+            <div class="hero-tagline-badge">
+              <span style="color: var(--color-gold-stars); font-size: 0.95rem;">★★★★★</span>
+              <span>Pédagogie d'Atelier • Maîtres Artisans Reconnus</span>
+            </div>
+            <h2 class="hero-title">
+              HAUTE CONFECTION
+              <span class="title-accent">Patronage, Coupe de Précision & Modélisme</span>
+            </h2>
+            <p class="hero-quote">
+              « De la silhouette imaginaire à la perfection du tombé sur mannequin. »
+            </p>
+            <div class="hero-actions">
+              <a href="#formations" class="btn btn-primary-azure">Programme Modélisme</a>
+              <a href="#inscriptions" class="btn btn-gold">Rejoindre l'Atelier</a>
+            </div>
+          </div>
 
-          <p class="hero-quote">
-            « Apprendre. Créer. Transformer son talent en métier. »
-          </p>
+          <!-- Slide 2 Caption -->
+          <div class="slide-caption-box" data-caption="2">
+            <div class="hero-tagline-badge">
+              <span style="color: var(--color-gold-stars); font-size: 0.95rem;">★★★★★</span>
+              <span>Diplômes Nationaux DQP & AQP • Succès 100% Pratique</span>
+            </div>
+            <h2 class="hero-title">
+              DIPLÔMES D'ÉTAT
+              <span class="title-accent">Consécration Professionnelle & Entrepreneuriat</span>
+            </h2>
+            <p class="hero-quote">
+              « Nos diplômées créent leur propre marque ou intègrent les prestigieuses maisons. »
+            </p>
+            <div class="hero-actions">
+              <a href="#certification" class="btn btn-primary-azure">Agrément & Diplômes</a>
+              <a href="#inscriptions" class="btn btn-gold">Candidater Maintenant</a>
+            </div>
+          </div>
 
-          <div class="hero-actions">
-            <a href="#formations" class="btn btn-primary-azure">Découvrir les Formations</a>
-            <a href="#inscriptions" class="btn btn-gold">S'inscrire (DQP / AQP)</a>
+          <!-- Slide 3 Caption -->
+          <div class="slide-caption-box" data-caption="3">
+            <div class="hero-tagline-badge">
+              <span style="color: var(--color-gold-stars); font-size: 0.95rem;">★★★★★</span>
+              <span>Patrimoine Vivant • Ndop Royal & Broderie d'Apparat</span>
+            </div>
+            <h2 class="hero-title">
+              BRODERIE D'ART
+              <span class="title-accent">Perlage Précieux & Ornementation Textile</span>
+            </h2>
+            <p class="hero-quote">
+              « Perpétuer la tradition des cours royales en y insufflant le souffle contemporain. »
+            </p>
+            <div class="hero-actions">
+              <a href="#creations" class="btn btn-primary-azure">Galerie des Créations</a>
+              <a href="#inscriptions" class="btn btn-gold">Formation Broderie</a>
+            </div>
+          </div>
+
+          <!-- Slide 4 Caption -->
+          <div class="slide-caption-box" data-caption="4">
+            <div class="hero-tagline-badge">
+              <span style="color: var(--color-gold-stars); font-size: 0.95rem;">★★★★★</span>
+              <span>Campus de Dschang • Machines Industrielles & Immersion</span>
+            </div>
+            <h2 class="hero-title">
+              ATELIER INTENSIF
+              <span class="title-accent">Pratique Concrète Dès Le Premier Jour</span>
+            </h2>
+            <p class="hero-quote">
+              « 80% de pratique en conditions réelles d'atelier pour une insertion garantie. »
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary-azure">Visiter l'Institut</a>
+              <a href="#inscriptions" class="btn btn-gold">Réserver sa Place</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Bottom Interactive Scene Navigation Bar -->
+      <!-- Flèches de navigation du carrousel -->
+      <button class="carousel-nav-btn carousel-prev" id="carouselPrevBtn" aria-label="Image précédente">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="carousel-nav-btn carousel-next" id="carouselNextBtn" aria-label="Image suivante">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Barre inférieure avec indicateurs de progression animés -->
       <div class="hero-footer-bar">
         <div class="container hero-footer-inner">
-          <div class="hero-scenes-nav">
-            <button class="hero-scene-tab active" data-scene="0">
-              <span class="hero-scene-num">01</span>
-              <span class="hero-scene-name">Collection Royale</span>
+          <div class="carousel-indicators" role="tablist" aria-label="Scènes du carrousel">
+            <button class="carousel-indicator-tab active" data-slide="0" role="tab" aria-selected="true">
+              <div class="carousel-progress-track">
+                <div class="carousel-progress-bar"></div>
+              </div>
+              <span class="indicator-num">01</span>
+              <span class="indicator-name">Collection Royale</span>
             </button>
-            <button class="hero-scene-tab" data-scene="1">
-              <span class="hero-scene-num">02</span>
-              <span class="hero-scene-name">Maître Couturier</span>
+
+            <button class="carousel-indicator-tab" data-slide="1" role="tab" aria-selected="false">
+              <div class="carousel-progress-track">
+                <div class="carousel-progress-bar"></div>
+              </div>
+              <span class="indicator-num">02</span>
+              <span class="indicator-name">Haute Confection</span>
             </button>
-            <button class="hero-scene-tab" data-scene="2">
-              <span class="hero-scene-num">03</span>
-              <span class="hero-scene-name">Consécration & Diplôme</span>
+
+            <button class="carousel-indicator-tab" data-slide="2" role="tab" aria-selected="false">
+              <div class="carousel-progress-track">
+                <div class="carousel-progress-bar"></div>
+              </div>
+              <span class="indicator-num">03</span>
+              <span class="indicator-name">Diplômes d'État</span>
             </button>
-            <button class="hero-scene-tab" data-scene="3">
-              <span class="hero-scene-num">04</span>
-              <span class="hero-scene-name">Promotion d'Atelier</span>
+
+            <button class="carousel-indicator-tab" data-slide="3" role="tab" aria-selected="false">
+              <div class="carousel-progress-track">
+                <div class="carousel-progress-bar"></div>
+              </div>
+              <span class="indicator-num">04</span>
+              <span class="indicator-name">Broderie d'Art</span>
+            </button>
+
+            <button class="carousel-indicator-tab" data-slide="4" role="tab" aria-selected="false">
+              <div class="carousel-progress-track">
+                <div class="carousel-progress-bar"></div>
+              </div>
+              <span class="indicator-num">05</span>
+              <span class="indicator-name">Atelier Intensif</span>
             </button>
           </div>
 
-          <div class="hero-scroll-cue">
-            <span>Explorer l'Univers</span>
-            <div style="width: 32px; height: 2px; background: var(--color-azure-base);"></div>
+          <div class="carousel-status-info">
+            <span class="carousel-counter" id="carouselCounter">01 / 05</span>
+            <div style="width: 24px; height: 2px; background: var(--color-azure-base);"></div>
           </div>
         </div>
       </div>
@@ -296,8 +399,8 @@
     <!-- =========================================================================
          04. SECTION FORMATIONS PROFESSIONNELLES (VRAIES PHOTOS)
          ========================================================================= -->
-    <section id="formations" class="section section-warm">
-      <div class="container">
+    <section id="formations" class="section section-warm section-formations-expanded">
+      <div class="container container-formations-full">
         <div class="section-header text-center">
           <div class="eyebrow">Programmes Agréés MINEFOP</div>
           <h2>Nos Cursus Professionnels</h2>
