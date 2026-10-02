@@ -10,3 +10,5 @@ Thumbs.db
 
 # Large raw archive folder (curated assets are organized in src/assets/)
 image jad/
+
+.vercel
